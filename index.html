@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Age Calculator — Calculate Your Exact Age</title>
+  <meta name="description"
+    content="Calculate your exact age in years, months, days, hours, minutes and seconds with our free online Age Calculator." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ═══ Background Illustration Scene ═══ -->
+  <div class="bg-scene" aria-hidden="true">
+
+    <!-- Life-stages image band (infinite scroll) -->
+    <div class="life-band">
+      <img src="life-stages.jpg" alt="" class="life-img life-img--1" draggable="false" />
+      <img src="life-stages.jpg" alt="" class="life-img life-img--2" draggable="false" />
+    </div>
+
+    <!-- Spotlight / vignette glow behind card area -->
+    <div class="bg-glow"></div>
+
+    <!-- Clock 1 (top-right) -->
+    <svg class="bg-clock bg-clock--1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="2.5" fill="none" />
+      <circle cx="50" cy="50" r="2.5" fill="currentColor" />
+      <line x1="50" y1="10" x2="50" y2="18" stroke="currentColor" stroke-width="2" />
+      <line x1="50" y1="82" x2="50" y2="90" stroke="currentColor" stroke-width="2" />
+      <line x1="10" y1="50" x2="18" y2="50" stroke="currentColor" stroke-width="2" />
+      <line x1="82" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="2" />
+      <line x1="50" y1="50" x2="50" y2="26" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        class="clock-hour" />
+      <line x1="50" y1="50" x2="72" y2="35" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        class="clock-minute" />
+    </svg>
+
+    <!-- Clock 2 (bottom-left, smaller) -->
+    <svg class="bg-clock bg-clock--2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="44" stroke="currentColor" stroke-width="2.5" fill="none" />
+      <circle cx="50" cy="50" r="2.5" fill="currentColor" />
+      <line x1="50" y1="10" x2="50" y2="18" stroke="currentColor" stroke-width="2" />
+      <line x1="50" y1="82" x2="50" y2="90" stroke="currentColor" stroke-width="2" />
+      <line x1="10" y1="50" x2="18" y2="50" stroke="currentColor" stroke-width="2" />
+      <line x1="82" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="2" />
+      <line x1="50" y1="50" x2="38" y2="28" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+        class="clock-hour" />
+      <line x1="50" y1="50" x2="65" y2="50" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        class="clock-minute" />
+    </svg>
+
+    <!-- Calendar -->
+    <svg class="bg-calendar" viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="14" width="72" height="70" rx="8" stroke="currentColor" stroke-width="2.5" fill="none" />
+      <line x1="4" y1="34" x2="76" y2="34" stroke="currentColor" stroke-width="2.5" />
+      <line x1="24" y1="4" x2="24" y2="22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+      <line x1="56" y1="4" x2="56" y2="22" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="22" cy="50" r="3" fill="currentColor" />
+      <circle cx="40" cy="50" r="3" fill="currentColor" />
+      <circle cx="58" cy="50" r="3" fill="currentColor" />
+      <circle cx="22" cy="68" r="3" fill="currentColor" />
+      <circle cx="40" cy="68" r="3" fill="currentColor" />
+      <circle cx="58" cy="68" r="3" fill="currentColor" />
+    </svg>
+
+    <!-- Hourglass -->
+    <svg class="bg-hourglass" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 8 L52 8 L33 50 L52 92 L8 92 L27 50 Z" stroke="currentColor" stroke-width="2.5" fill="none"
+        stroke-linejoin="round" />
+      <line x1="4" y1="8" x2="56" y2="8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+      <line x1="4" y1="92" x2="56" y2="92" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="30" cy="55" r="2" fill="currentColor" class="sand sand-1" />
+      <circle cx="30" cy="65" r="2" fill="currentColor" class="sand sand-2" />
+      <circle cx="30" cy="75" r="2" fill="currentColor" class="sand sand-3" />
+    </svg>
+
+    <!-- Timeline dots (bottom) -->
+    <svg class="bg-timeline" viewBox="0 0 1400 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="30" x2="1400" y2="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="10 7" />
+      <circle cx="100" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-1" />
+      <circle cx="333" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-2" />
+      <circle cx="566" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-3" />
+      <circle cx="800" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-4" />
+      <circle cx="1033" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-5" />
+      <circle cx="1266" cy="30" r="5" fill="currentColor" class="tl-dot tl-dot-6" />
+    </svg>
+
+    <!-- Floating dots -->
+    <div class="bg-dot d1"></div>
+    <div class="bg-dot d2"></div>
+    <div class="bg-dot d3"></div>
+    <div class="bg-dot d4"></div>
+    <div class="bg-dot d5"></div>
+    <div class="bg-dot d6"></div>
+    <div class="bg-dot d7"></div>
+    <div class="bg-dot d8"></div>
+  </div>
+
+  <main id="app">
+    <!-- ───────── Hero / Input Card ───────── -->
+    <section class="card card--input" id="inputCard">
+      <div class="card__icon-row">
+        <img src="cake.png" alt="Birthday Cake" class="card__cake-img" />
+      </div>
+      <h1 id="mainHeading">Age Calculator</h1>
+      <p class="subtitle">Calculate your exact age in years, months, days, hours, minutes and seconds.</p>
+
+      <div class="input-group" id="inputGroup">
+        <label for="dobInput">Select your Date of Birth</label>
+        <input type="date" id="dobInput" aria-label="Date of Birth" />
+        <p class="error-msg" id="errorMsg"></p>
+      </div>
+
+      <div class="btn-row">
+        <button id="calcBtn" class="btn btn--primary" type="button">
+          <span class="btn__icon">⚡</span> Calculate Age
+        </button>
+        <button id="resetBtn" class="btn btn--secondary" type="button">
+          <span class="btn__icon">🔄</span> Reset
+        </button>
+      </div>
+    </section>
+
+    <!-- ───────── Results Section ───────── -->
+    <section class="results hidden" id="results">
+      <!-- Primary age -->
+      <div class="card card--result fade-up" id="primaryAge">
+        <h2>Your Age</h2>
+        <div class="age-grid" id="ageGrid">
+          <div class="age-item">
+            <span class="age-item__icon">🎂</span>
+            <span class="age-item__value" id="ageYears">0</span>
+            <span class="age-item__label">Years</span>
+          </div>
+          <div class="age-item">
+            <span class="age-item__icon">📅</span>
+            <span class="age-item__value" id="ageMonths">0</span>
+            <span class="age-item__label">Months</span>
+          </div>
+          <div class="age-item">
+            <span class="age-item__icon">📆</span>
+            <span class="age-item__value" id="ageDays">0</span>
+            <span class="age-item__label">Days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lived stats -->
+      <div class="card card--stats fade-up" id="livedStats">
+        <h2>You Have Lived Approximately</h2>
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-tile">
+            <span class="stat-tile__icon">📆</span>
+            <span class="stat-tile__value" id="totalDays">0</span>
+            <span class="stat-tile__label">Days</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">📋</span>
+            <span class="stat-tile__value" id="totalWeeks">0</span>
+            <span class="stat-tile__label">Weeks</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">⏰</span>
+            <span class="stat-tile__value" id="totalHours">0</span>
+            <span class="stat-tile__label">Hours</span>
+          </div>
+          <div class="stat-tile">
+            <span class="stat-tile__icon">⏱️</span>
+            <span class="stat-tile__value" id="totalMinutes">0</span>
+            <span class="stat-tile__label">Minutes</span>
+          </div>
+          <div class="stat-tile stat-tile--live">
+            <span class="stat-tile__icon">⚡</span>
+            <span class="stat-tile__value" id="totalSeconds">0</span>
+            <span class="stat-tile__label">Seconds <span class="live-badge">LIVE</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Birthday info -->
+      <div class="card card--birthday fade-up" id="birthdayCard">
+        <h2>🎈 Birthday Info</h2>
+        <div class="birthday-grid">
+          <div class="birthday-item">
+            <span class="birthday-item__label">You were born on</span>
+            <span class="birthday-item__value" id="birthDay">—</span>
+          </div>
+          <div class="birthday-item">
+            <span class="birthday-item__label">Next Birthday</span>
+            <span class="birthday-item__value" id="nextBirthday">—</span>
+          </div>
+          <div class="birthday-item">
+            <span class="birthday-item__label">Days Until Next Birthday</span>
+            <span class="birthday-item__value" id="daysUntil">—</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── How It Works ───────── -->
+    <section class="card card--info fade-up" id="howSection">
+      <h2>How Age Calculation Works</h2>
+      <p>
+        Our calculator compares your <strong>date of birth</strong> with the
+        <strong>current date and time</strong> to determine your exact age. It
+        calculates the difference in <em>years</em>, <em>months</em>, and
+        <em>days</em>, accounting for varying month lengths and leap years.
+        The live counters for hours, minutes, and seconds update in real time
+        so you can see your age grow second by second.
+      </p>
+    </section>
+  </main>
+
+  <footer id="siteFooter">
+    <p>&copy; 2026 Age Calculator &nbsp;|&nbsp; Calculate Your Exact Age</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
